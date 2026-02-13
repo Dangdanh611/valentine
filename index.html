@@ -294,6 +294,37 @@
         <source src="https://dangdanh611.github.io/valentine/chamemmotdoi.mp3" type="audio/mp3">
     </audio>
     <div class="music-control" onclick="toggleMusic()">🎵</div>
+<script>
+function isMobileUA() {
+  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+    .test(navigator.userAgent);
+}
+
+function isSmallScreen() {
+  return window.innerWidth < 900;
+}
+
+if (isMobileUA() && isSmallScreen()) {
+  document.documentElement.innerHTML = `
+    <head>
+      <title>Không hỗ trợ thiết bị</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        body {
+          font-family: Arial;
+          text-align: center;
+          padding: 40px;
+        }
+      </style>
+    </head>
+    <body>
+      <h2>⚠️ Trang này chỉ dùng cho máy tính</h2>
+      <p>Hãy mở bằng PC/Laptop 💻</p>
+      <p>Hoặc bật <b>“Chế độ trang web cho máy tính”</b> trên điện thoại rồi tải lại.</p>
+    </body>
+  `;
+}
+</script>
 
     <script>
         /* --- CONFIGURATION --- */
@@ -461,5 +492,6 @@ YOUR_EMAIL
         }
     </script>
 </body>
+
 
 </html>
